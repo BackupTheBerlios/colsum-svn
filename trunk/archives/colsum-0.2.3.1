@@ -1,0 +1,143 @@
+.\" COLSUM
+.\" Copyright (c) 1995-2008, Stefan Habermehl
+.\"
+.TH colsum 1 "COLSUM 0.2 pl3"
+.SH NAME
+.B colsum
+\- Analyse, compute and output numerical data colums
+.SH SYNOPSIS
+colsum [[-i] infile] [-v#] [-h] [?] [c|C<column>:#1:#2] {[<column>] [([+|-|*|/|^][+|-]#.#|S<column>[^])] [+|*]} {...} ...
+.SH BESCHREIBUNG
+Das Programm colsum liest eine oder mehrere Spalten mit numerischen Daten aus
+dem angegebenen Input-File oder der Standard-Eingabe (Pipe: |) und berechnet
+die \fISumme\fP der Elemente der angegebenen Spalte bzw. der ersten Spalte
+(Default) bzw. des Stacks, sowie den \fIMittelwert\fP und die
+\fIStandardabweichung\fP. Ausserdem koennen die Elemente jeder Spalte einer der
+\fImathematischen\ Grundoperationen\fP unterworfen werden (+-*/^). Das Ergebnis
+der mathematischen Operation einer Spalte kann zum \fIErgebnis-Stack\fP addiert
+oder mit diesem multipliziert werden, sodass beliebige \fIFormeln\fP, in denen
+nur die Grundrechenarten vorkommen auf die Spalten angewendet werden koennen.
+Fuer eine der Spalten des Input-Files kann ein \fIWertebereich\fP angegeben werden.
+\fIKommentarzeilen\fP, die mit # beginnen, werden ebenso wie Leerzeilen
+ignoriert.
+.SS OPTIONEN
+.sp
+.I \fB-h\fP
+Gibt eine Uebersicht der Optionen mit Kurzbeschreibung aus
+.sp
+.I \fB-v<mode-no.>\fP
+Selektiert den gewuenschten Outputmodus (s.u.)
+.sp
+.I \fB-i <infile-name>\fP
+Lese Input aus der angegebenen Datei statt von <stdin>.
+"-i" kann dabei entfallen, wenn der Dateiname das erste Argument ist und
+nicht mit einer Zahl anfaengt.
+Bei Lesen von \fIstdin\fP (Default), beachte: Fileende/Abschluss mit "^Z" !
+.PP
+.SS ARGUMENTE
+.sp
+.I \fB<column>\fP
+\fINummer der Spalte(n)\fP, die gelesen werden soll(en), Default ist die erste Spalte.
+Spalte 0 bedeutet \fIlaufende Nummer\fP (1, 2, ...). Gezaehlt werden nur
+signifikante Zeilen (keine Leer- oder Kommentarzeilen)!
+.sp
+.I \fB(mathematischer\ Ausdruck)\fP
+Auf die einzulesenden Spalten wird eine der mathematischen Grundoperationen
+angewandt, d.h. eine positive oder negative Real-Zahl kann addiert, subtrahiert,
+multipliziert bzw. durch sie dividiert werden. Auf die geoeffnete Klammer muss
+eines der Zeichen \fI+\fP, \fI\-\fP, \fI*\fP, \fI/\fP, \fI^\fP folgen.
+Ist dies nicht der Fall, dann muss vor der schliessenden Klammer ein \fP^\fP erscheinen.
+Mensch hat somit die Wahl, den Spaltenwert als Basis oder Exponent eines
+einfachen \fIPotenzausdrucks\fP zu verwenden.
+.\" Bei Multiplikation und Division kann noch ein Vorzeichen \fI+\fP oder \fI\-\fP folgen.
+Danach muss eine
+Integer- oder Real-Zahl, gefolgt von der schliessenden Klammer stehen.
+Statt einer Konstante kann auch eine Spaltennummer angegeben werden, der ein
+\fIS\fP vorangehen muss. Dann wird jeweils der Wert dieser Spalte fuer jede Zeile
+in den gegebenen Ausdruck eingesetzt ("S0" = laufende Nummer). Im
+Gesamtausdruck duerfen selbstverstaendlich keine Leerzeichen enthalten sein!
+.sp
+.I \fB+|*\fP
+Die aktuelle, d. h. die zuletztgenannte Spalte wird zum \fIErgebnis-Stack\fP
+addiert bzw. multipliziert. Erscheint diese Angabe vor einer Spaltenspezifikation,
+so wird defaultmaessig die erste Spalte des Inputs genommen. Die Angabe \fI*\fP
+kann erst nach mindestens einmaliger Verwendung von \fI+\fP erfolgen.
+.sp
+.I \fBc|C<Spaltennummer>:<untere_Grenze>:<obere_Grenze>\fP
+Bei jeder Input-Zeile wird vorher der Wert der angegebenen Spalte ueberprueft.
+Liegt dieser nicht innerhalb der gegebenen Grenzen, so wird die Zeile verworfen.
+Wird die 0. Spalte angegeben, dann bezieht sich der Bereich auf die Zeilennummer
+(ohne Kommentar- und Leerzeilen!).
+.sp
+.I \fB?\fP
+Usage-Meldung, wie Aufruf ohne Argument
+.sp
+.PP
+.SS AUSGABEMODI
+.sp
+.I \fB0\fP
+\- \fIkeine Ausgabe\fP, Rueckgabewert 0 bei erfolgreicher Aktion, positiv bei
+unterdrueckter Hilfe- bzw. usage-Meldung, negativ bei Auftreten eines Fehlers
+.sp
+.I \fB1\fP
+\- Ausgabe der \fISpalten- bzw. Stacksumme\fP auf stdout
+.sp
+.I \fB2\fP
+\- Ausgabe des \fIDateinamens\fP, der \fISpaltennummer\fP (0 = Stack!),
+der \fIWerteanzahl\fP, der \fISpaltensumme\fP, des arithmetischen
+\fIMittelwertes\fP sowie der \fIStandardabweichung\fP auf \fIstdout\fP
+.sp
+.I \fB3\fP
+\- Ausgabe der extrahierten bzw. berechneten \fIWertetabelle\fP nach
+\fIstdout\fP sowie der Angaben wie bei Modus 2 nach stderr
+.sp
+.I \fB4\fP
+\- Dreispaltige Ausgabe der \fIlaufenden Nummer\fP, des jeweiligen
+\fIWertes\fP und der bis dahin \fIaufsummierten Werte\fP, sowie der
+Angaben wie bei Modus 2 nach \fIstdout\fP
+.sp
+.I \fB5\fP
+\- Ausgabe des \fIErgebnis-Stacks\fP nach \fIstdout\fP
+.sp
+.I \fB6\fP
+\- Ausgabe der extrahierten bzw. berechneten \fISpalten\fP und des
+\fIErgebnis-Stacks\fP nach \fIstdout\fP
+.sp
+.I \fB7\fP
+\- Ausgabe der extrahierten bzw. berechneten \fISpalten\fP nach \fIstdout\fP
+.sp
+.I \fB8\fP
+\- wie 7, aber als \fIOktalzahl\fP (nach Rundung)
+.sp
+.I \fB9\fP
+\- wie 7, aber als \fIHexadezimalzahl\fP (nach Rundung)
+.sp
+.I \fB10\fP
+\- wie 2, aber Ausgabe komplett in \fIVariablenform\fP
+.sp
+.SH BEISPIELE
+.sp
+colsum test -v4
+.sp
+colsum 3 (+273.15) -v3 -i tmpcel.dat > tmpkel.dat
+.sp
+colsum test.asc (*-2.5) -v5 | colsum (+11.5) -v3 > result.dat
+.sp
+colsum -i test.gnu -v1 | colsum (/+2) -v1
+.sp
+colsum test.asc 1 + 2 * 3 (*S1) -v6
+.sp
+colsum (2^) -v7
+.sp
+colsum 0 -v9
+.sp
+.PP
+.SH HINTS
+Bei manchen Shells muss den Zeichen ?, \-, *, (, ), ... (?) ein Backslash
+(\\) vorangestellt oder das jeweilige Argument in Anfuehrungsstriche "..."
+gesetzt werden, da sie sonst von der Shell interpretiert werden!
+Zur Eingabe des "^" unter OS2 muss das Zeichen verdoppelt werden ("^^").
+.PP
+.SH BUGS
+Bug\-Reports, Dankeshymnen und Aenderungsvorschlaege an 
+\fIhabermehl@chemie.uni-frankfurt.de\fP

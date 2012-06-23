@@ -1,0 +1,24 @@
+CC= gcc
+CP = copy
+STRIP = strip
+EXE = colsum.exe
+MAN = colsum.1
+OBJ = colsum.o colmod.o
+LIB = -lm -lcf
+CFLAGS = -Wall -s $(DEBUG)
+#CFLAGS = -O2 -Wall -s
+#CFLAGS = -Wall
+
+all: $(EXE)
+
+$(EXE): $(OBJ) colsum.h
+	$(CC) $(CFLAGS) $(OBJ) $(LIB) -o $@
+
+install:
+	$(CP) $(EXE) f:\public\tools\all\$(EXE)
+	$(CP) $(MAN) g:\man\man1\$(MAN)
+
+clean:
+	rm -f $(EXE)
+
+
