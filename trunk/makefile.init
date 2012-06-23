@@ -1,0 +1,105 @@
+############################################
+#                                          #
+#  COLSUM - Column Computation Tool        #
+#                                          #
+#  makefile.init for Builds                #
+#                                          #
+#  Settings included at beginning of all   #
+#  Eclipse Build Configurations            #
+#                                          #
+#  GNU Make Build Environment              #
+#  based on Eclipse IDE Toolchains         #
+#                                          #
+#  @copyright (c) 2008 Stefan Habermehl    #
+#  @license GNU GPL v3+ (see LICENSE.txt)  #
+#                                          #
+############################################
+#
+# @version SVN: $Id: makefile.init 54 2009-02-01 20:55:41Z stefan $
+#
+############################################
+
+
+#### 0. General / Compatibility Stuff
+
+# Set suffix list explicitly using only the suffixes we need
+.SUFFIXES:
+.SUFFIXES: .c .o .d
+
+
+#### 1. Target Systems Detection
+
+UNAME := $(shell uname|tr -d \\n)
+
+ifeq ($(OSTYPE),linux)
+LINUX := ON
+else 
+ifeq ($(UNAME),Linux)
+LINUX := ON
+endif
+endif
+
+ifeq ($(OS),Windows_NT)
+WIN32 := ON 
+endif
+
+
+#### 2. System Settings and Customization
+
+ifdef WIN32
+###################################### WIN32
+
+COLSUM_ROOT       := C:/Projekte/eclipse/c_workspace/colsum
+										# CFLIB (Eclipse) Workspace Path
+COLSUM_PROJECT    := bin_win32
+										# Library Project (makeable Directory)
+COLSUM_ADD_BUILDS := debug_win32
+										# Additional Library Builds
+COLSUM_DEFINES    :=
+COLSUM_UNDEFINES  :=
+										# System specific defs and undefs
+EXE               := .exe
+										# Executable Extension
+DIRSEP            := /
+										# Directory Separator [$(subst /,\,/)]
+RM                := rm -rf
+CP                := cp
+STRIP             := strip
+										# MSYS and basic unix shell commands
+SHELL             = /bin/sh
+
+else
+ifdef LINUX
+###################################### LINUX
+
+COLSUM_ROOT       := /home/yourname/workspace/colsum
+COLSUM_PROJECT    := bin_linux
+COLSUM_ADD_BUILDS := 
+COLSUM_DEFINES    :=
+COLSUM_UNDEFINES  :=
+EXE               :=
+DIRSEP            := /
+RM                := rm -rf
+CP                := cp
+STRIP             := strip
+SHELL             = /bin/sh
+
+else
+###################################### OTHER
+
+COLSUM_ROOT       := $(PWD)
+COLSUM_PROJECT    := bin
+COLSUM_DEFINES    :=
+COLSUM_UNDEFINES  :=
+EXE               :=
+DIRSEP            := /
+RM                := rm -rf
+CP                := cp
+STRIP             := strip
+SHELL             = /bin/sh
+
+endif
+endif
+
+########################## end makefile.init
+

@@ -1,0 +1,37 @@
+############################################
+#                                          #
+#  COLSUM - Column Computation Tool        #
+#                                          #
+#  makefile.defs for Builds                #
+#                                          #
+#  Settings included at beginning of all   #
+#  Eclipse Build Configurations            #
+#                                          #
+#  GNU Make Build Environment              #
+#  based on Eclipse IDE Toolchains         #
+#                                          #
+#  @copyright (c) 2008-9 Stefan Habermehl  #
+#  @license GNU GPL v3+ (see LICENSE.txt)  #
+#                                          #
+############################################
+#
+# @version SVN: $Id: makefile.defs 41 2009-01-31 14:49:24Z stefan $
+#
+############################################
+
+# Included in automatic makefiles after dependencies
+# General definitions are in makefile.init
+# Not included by root makefile!
+
+ifdef WIN32
+
+# We have MSYS and basic unix shell commands
+# but maybe RM is defined as del, so:
+
+RM := rm -rf
+
+endif
+
+COLSUM_ROOT_REL := ..
+
+########################## end makefile.defs

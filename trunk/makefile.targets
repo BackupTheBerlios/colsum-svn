@@ -1,0 +1,36 @@
+############################################
+#                                          #
+#  COLSUM - Column Computation Tool        #
+#                                          #
+#  makefile.targets for Builds             #
+#                                          #
+#  Targets included at end of all          #
+#  Build Configurations                    #
+#                                          #
+#  GNU Make Build Environment              #
+#  based on Eclipse IDE Toolchains         #
+#                                          #
+#  @copyright (c) 2008 Stefan Habermehl    #
+#  @license GNU GPL v3+ (see LICENSE.txt)  #
+#                                          #
+############################################
+#
+# @version SVN: $Id: makefile 32 2008-08-03 09:51:59Z stefan $
+#
+############################################
+
+rebuild: clean all
+
+doc:
+	cd $(COLSUM_ROOT)$(DIRSEP)doc && $(MAKE) -C . all
+
+sysinfo:
+	@echo OS = '$(OS)'
+	@echo OSTYPE = '$(OSTYPE)'
+	@echo UNAME = '$(UNAME)'
+	@echo LINUX = '$(LINUX)'
+	@echo WIN32 = '$(WIN32)'
+	
+.PHONY: all man archive rebuild clean install dist unpack doc sysinfo
+
+############### End of Customization Section
