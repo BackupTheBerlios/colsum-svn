@@ -1,0 +1,97 @@
+.TH "colsum" 1 "1 Feb 2009" "Version 0.6.2" "COLSUM - Column Computation Tool" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+colsum \- Analyze, compute and transform numerical data tables of unlimited length
+.SH "SYNOPSIS"
+.PP
+ 
+.PP
+.nf
+Usage: colsum.exe [[-i] <infile>] [-o <outfile>] [-v#] [-r <ini-file>] [-h] [-t] [-d]
+    [-s<save-ini-file>] [-k] [-f%<format-specification>] [c|C<column>:#1[:#2]]
+    {[<column>] [=[+|-|*|x|/|^|a|&|n|||o][+|-]#.#|S<column>[^]] [+|*]} {...} ...
+
+.fi
+.PP
+.SH "DESCRIPTION"
+.PP
+Colsum extracts columns with numerical values from an input stream, does some computations on them and outputs the results in a well-defined, formatted form to an output stream.
+.PP
+Colsum is designed to be used as a filter. Input- and output stream can both be a file, pipe or standard I/O channel. You can easily do more complex computations by combining colsum calls with different instructions in a pipeline.
+.SS "Basic operations and options:"
+1. Compute number of values, sum, maximum, minimum, arithmetic mean and standard deviation based on one result value per non-empty input file row
+.PP
+2. Return a 'clean' selection of input columns and/or values computed from them
+.PP
+3. Output format for numerical values is decimal float by default, but can be octal or hexadecimal depending on output option '-v' or specified as 'printf'-Style format string (see 'man 3 printf')
+.PP
+4. Every input column can be transformed by one mathematical operation:
+.IP "\(bu" 2
+add/substract a constant value or value of another column
+.IP "\(bu" 2
+multiply/divide by a constant value or value of another column
+.IP "\(bu" 2
+raise to power, given exponent
+.PP
+.SH "OPTIONS"
+.PP
+Use command \fB'colsum -h'\fP:  
+.PP
+.nf
+          option v: verbosity level( 0-10), Default=2
+          option f: output-format (C-style)
+          option h: help (set verbosity to 0 for configuration dump!)
+          option i: infile to read from instead of <stdin>
+          option o: outfile to write to instead of <stdout>
+          option r: configuration file
+          option s: save configuration to given filename or configuration file where configuration
+            was read from or default file (when without argument)
+          option k: collect comments for saved configuration file (see -s)
+          option t: output current time
+          option d: output current date
+          mathematical expression in the form '(expr)' or '=expr' must follow the
+            column-no. to apply to, if given
+          + (default) or * after col-no. is operator between column's
+            result and stack
+          c: computation and output only for lines where the specified
+            column's value is #1 or between #1 and #2
+          Default column=1, column 0 holds the row no. 1-.. (only significant lines)
+          blank lines and comments(#) will be ignored (unless -s and -k are set)!
+
+.fi
+.PP
+.SH "VERSION"
+.PP
+\fBVersion:\fP
+.RS 4
+0.6.2 ($Id: \fBcolsum.c\fP 46 2009-02-01 20:12:09Z stefan $) 
+.RE
+.PP
+.SH "AUTHOR"
+.PP
+\fBAuthor:\fP
+.RS 4
+Stefan Habermehl <stefan.habermehl@mcff.de> 
+.RE
+.PP
+.SH "COPYRIGHT"
+.PP
+\fBCopyright: \fP.RS 4
+(c) 1994,1995,1996,2000,2004,2008,2009 Stefan Habermehl 
+.RE
+.PP
+\fBLicense: \fP.RS 4
+GNU General Public License v3 or later, see \fBCFLIB License\fP 
+.RE
+.PP
+.SH "SEE ALSO"
+.PP
+\fBUses: \fP.RS 4
+\fBFlexible Configuration Library\fP <http://cflib.berlios.de> 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COLSUM - Column Computation Tool from the source code.

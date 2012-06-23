@@ -1,0 +1,108 @@
+colsum(1)        COLSUM - Column Computation Tool       colsum(1)
+
+
+
+NNAAMMEE
+       colsum - Analyze, compute and transform numerical data
+       tables of unlimited length
+
+SSYYNNOOPPSSIISS
+       Usage: colsum.exe [[-i] <infile>] [-o <outfile>] [-v#] [-r <ini-file>] [-h] [-t] [-d]
+           [-s<save-ini-file>] [-k] [-f%<format-specification>] [c|C<column>:#1[:#2]]
+           {[<column>] [=[+|-|*|x|/|^|a|&|n|||o][+|-]#.#|S<column>[^]] [+|*]} {...} ...
+
+
+
+DDEESSCCRRIIPPTTIIOONN
+       Colsum extracts columns with numerical values from an
+       input stream, does some computations on them and outputs
+       the results in a well-defined, formatted form to an output
+       stream.
+
+       Colsum is designed to be used as a filter. Input- and
+       output stream can both be a file, pipe or standard I/O
+       channel. You can easily do more complex computations by
+       combining colsum calls with different instructions in a
+       pipeline.
+
+   BBaassiicc ooppeerraattiioonnss aanndd ooppttiioonnss::
+       1. Compute number of values, sum, maximum, minimum,
+       arithmetic mean and standard deviation based on one result
+       value per non-empty input file row
+
+       2. Return a 'clean' selection of input columns and/or
+       values computed from them
+
+       3. Output format for numerical values is decimal float by
+       default, but can be octal or hexadecimal depending on
+       output option '-v' or specified as 'printf'-Style format
+       string (see 'man 3 printf')
+
+       4. Every input column can be transformed by one
+       mathematical operation:
+
+       +o add/substract a constant value or value of another
+         column
+
+       +o multiply/divide by a constant value or value of another
+         column
+
+       +o raise to power, given exponent
+
+
+OOPPTTIIOONNSS
+       Use command ''ccoollssuumm --hh'':
+
+                 option v: verbosity level( 0-10), Default=2
+                 option f: output-format (C-style)
+                 option h: help (set verbosity to 0 for configuration dump!)
+                 option i: infile to read from instead of <stdin>
+                 option o: outfile to write to instead of <stdout>
+                 option r: configuration file
+                 option s: save configuration to given filename or configuration file where configuration
+                   was read from or default file (when without argument)
+                 option k: collect comments for saved configuration file (see -s)
+                 option t: output current time
+                 option d: output current date
+                 mathematical expression in the form '(expr)' or '=expr' must follow the
+                   column-no. to apply to, if given
+                 + (default) or * after col-no. is operator between column's
+                   result and stack
+                 c: computation and output only for lines where the specified
+                   column's value is #1 or between #1 and #2
+                 Default column=1, column 0 holds the row no. 1-.. (only significant lines)
+                 blank lines and comments(#) will be ignored (unless -s and -k are set)!
+
+
+
+VVEERRSSIIOONN
+       VVeerrssiioonn::
+           0.6.2 ($Id: ccoollssuumm..cc 46 2009-02-01 20:12:09Z stefan $)
+
+
+AAUUTTHHOORR
+       AAuutthhoorr::
+           Stefan Habermehl <stefan.habermehl@mcff.de>
+
+
+CCOOPPYYRRIIGGHHTT
+       CCooppyyrriigghhtt:: .RS 4 (c) 1994,1995,1996,2000,2004,2008,2009
+       Stefan Habermehl
+
+       LLiicceennssee:: .RS 4 GNU General Public License v3 or later, see
+       CCFFLLIIBB LLiicceennssee
+
+
+SSEEEE AALLSSOO
+       UUsseess:: .RS 4 FFlleexxiibbllee CCoonnffiigguurraattiioonn LLiibbrraarryy
+       <http://cflib.berlios.de>
+
+
+
+AAuutthhoorr
+       Generated automatically by Doxygen for COLSUM - Column
+       Computation Tool from the source code.
+
+
+
+Version 0.6.2               1 Feb 2009                  colsum(1)
