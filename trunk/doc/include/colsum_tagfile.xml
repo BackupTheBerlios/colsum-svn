@@ -1,0 +1,640 @@
+<?xml version='1.0' encoding='ISO-8859-1' standalone='yes' ?>
+<tagfile>
+  <compound kind="page">
+    <name>index</name>
+    <title>colsum - Column Computation Tool</title>
+    <filename>index</filename>
+    <docanchor file="index">utilities</docanchor>
+    <docanchor file="index">copying</docanchor>
+    <docanchor file="index">manual</docanchor>
+    <docanchor file="index">main</docanchor>
+    <docanchor file="index">documentation</docanchor>
+  </compound>
+  <compound kind="file">
+    <name>colmod.c</name>
+    <path>I:/eclipse/c_workspace/colsum_survival/src/</path>
+    <filename>colmod_8c</filename>
+    <includes id="colsum_8h" name="colsum.h" local="yes" imported="no">colsum.h</includes>
+    <member kind="function">
+      <type>void</type>
+      <name>usage</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>g41d1c1f994db6ab7f715ca94d73d57a4</anchor>
+      <arglist>(int code, char *str, int modemask)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>parse_mathexp</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>geee91269d672bfd6eeaeccf7c80719fb</anchor>
+      <arglist>(int sind, char *expr, COLUMN *C, int *max_column)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>colsum.c</name>
+    <path>I:/eclipse/c_workspace/colsum_survival/src/</path>
+    <filename>colsum_8c</filename>
+    <includes id="colsum_8h" name="colsum.h" local="yes" imported="no">colsum.h</includes>
+    <member kind="function">
+      <type>int</type>
+      <name>main</name>
+      <anchorfile>colsum_8c.html</anchorfile>
+      <anchor>e0665038b72011f5c680c660fcb59459</anchor>
+      <arglist>(int argc, char *argv[])</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>colsum.h</name>
+    <path>I:/eclipse/c_workspace/colsum_survival/include/</path>
+    <filename>colsum_8h</filename>
+    <class kind="struct">COLUMN</class>
+    <class kind="struct">COLRESULT</class>
+    <member kind="define">
+      <type>#define</type>
+      <name>VERSION</name>
+      <anchorfile>colsum_8h.html</anchorfile>
+      <anchor>1c6d5de492ac61ad29aec7aa9a436bbf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>MAXLINE</name>
+      <anchorfile>colsum_8h.html</anchorfile>
+      <anchor>3e937c42922f7601edb17b747602c471</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>MAXFORM</name>
+      <anchorfile>colsum_8h.html</anchorfile>
+      <anchor>7506df667c5e9615257d561ae52dc66d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>MAXARG</name>
+      <anchorfile>colsum_8h.html</anchorfile>
+      <anchor>4c171d1ccc50f0b6ce7ad2f475eeba32</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SPAMAX</name>
+      <anchorfile>colsum_8h.html</anchorfile>
+      <anchor>339d4e746103f294c4b733d20c058290</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>VMIN</name>
+      <anchorfile>colsum_8h.html</anchorfile>
+      <anchor>52eb058f379b5122d28b036a06ce0e76</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>VMAX</name>
+      <anchorfile>colsum_8h.html</anchorfile>
+      <anchor>ff4b1376965cfdb32a775db8565d2540</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DEF_VERB</name>
+      <anchorfile>colsum_8h.html</anchorfile>
+      <anchor>146239ba85a53c8df8ee84e5fe095dd1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DEF_COLUMN</name>
+      <anchorfile>colsum_8h.html</anchorfile>
+      <anchor>e0026596de26a079eab6d72f14a08844</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DEF_FORMAT</name>
+      <anchorfile>colsum_8h.html</anchorfile>
+      <anchor>bf79178bf787f8b0873eacd98902feb7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DEF_USAGE</name>
+      <anchorfile>colsum_8h.html</anchorfile>
+      <anchor>12a350549aa42132085d48b4b456c930</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>TRUE</name>
+      <anchorfile>colsum_8h.html</anchorfile>
+      <anchor>a8cecfc5c5c054d2875c03e77b7be15d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>FALSE</name>
+      <anchorfile>colsum_8h.html</anchorfile>
+      <anchor>a93f0eb578d23995850d61f7d61c55c1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ERR_HLP</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>g0ed0b92b8bb6e5223285a7b5f8497b75</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ERR_USG</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>gefc6265f53652d720fadac584d8c6bfe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ERR_VERB</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>g6656f2fe3a2a5098b2e847906e4d35fe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ERR_MATH</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>gae41df7350c15969bb9eb757d45537db</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ERR_LIM</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>gb64f84d9c595cabe4e4ee5f387fd4189</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ERR_ACC</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>g7c7dd110d8790beb97c365858d500e40</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ERR_ARG</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>g8700518a3e3d0c7a4439a37dcbcf2143</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>USG_DEFAULT</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>g4abdbf7b3962fd9cdfeb8d2c7136e697</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>USG_VERSION</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>gcafd130ade93fc9ab47eab2c91a1ac4f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>USG_LICENSE</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>gadc195aeddb37fbd912ac4a034a30caf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>USG_ERRORS</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>ge01f6b80a9b45a8e207e3d9cdf2b536d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>USG_DUMP</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>gdae2e4f464336f9056f8fae3e0d4f47c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_DIV</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>gddec4be73478fb9243f0ea0087366641</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_MUL</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>g4146f7f25d6c4a864b6db8d4e0adf3e1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_NONE</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>gb2ee9d111f415c5df9ef71f3f4544e85</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_ADD</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>g073d010839a6dc707f3031db67149870</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_SUB</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>gbe4a72f7e3f753e7059bc2f2a01a0cfc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_POWE</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>g4799df9f838d38dd3bf31faaff3daf56</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_POWB</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>gb55cf31f8ec36312337505f9138102c7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_ABS</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>g0e01cf08819ea754f8eba0577136ad4f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_AND</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>gc56577e3b08d3c7453db5d81d96bf05b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_OR</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>gda17ceeb97ff33a840db0943f9821c5b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>usage</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>g41d1c1f994db6ab7f715ca94d73d57a4</anchor>
+      <arglist>(int code, char *str, int modemask)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>parse_mathexp</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>geee91269d672bfd6eeaeccf7c80719fb</anchor>
+      <arglist>(int sind, char *expr, COLUMN *C, int *max_column)</arglist>
+    </member>
+  </compound>
+  <compound kind="page">
+    <name>colsum_license</name>
+    <title>Colsum License</title>
+    <filename>colsum_license</filename>
+  </compound>
+  <compound kind="group">
+    <name>colsum</name>
+    <title>colsum</title>
+    <filename>group__colsum.html</filename>
+    <docanchor file="group__colsum">synopsis</docanchor>
+    <docanchor file="group__colsum">basics</docanchor>
+    <docanchor file="group__colsum">copyright</docanchor>
+    <docanchor file="group__colsum">author</docanchor>
+    <docanchor file="group__colsum">version</docanchor>
+    <docanchor file="group__colsum">uses</docanchor>
+    <docanchor file="group__colsum">commandline</docanchor>
+    <docanchor file="group__colsum">description</docanchor>
+  </compound>
+  <compound kind="group">
+    <name>cflib</name>
+    <title>Flexible Configuration Library</title>
+    <filename>group__cflib.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>usage</name>
+    <title>User Interface and Error Codes</title>
+    <filename>group__usage.html</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>ERR_HLP</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>g0ed0b92b8bb6e5223285a7b5f8497b75</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ERR_USG</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>gefc6265f53652d720fadac584d8c6bfe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ERR_VERB</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>g6656f2fe3a2a5098b2e847906e4d35fe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ERR_MATH</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>gae41df7350c15969bb9eb757d45537db</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ERR_LIM</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>gb64f84d9c595cabe4e4ee5f387fd4189</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ERR_ACC</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>g7c7dd110d8790beb97c365858d500e40</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ERR_ARG</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>g8700518a3e3d0c7a4439a37dcbcf2143</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>USG_DEFAULT</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>g4abdbf7b3962fd9cdfeb8d2c7136e697</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>USG_VERSION</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>gcafd130ade93fc9ab47eab2c91a1ac4f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>USG_LICENSE</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>gadc195aeddb37fbd912ac4a034a30caf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>USG_ERRORS</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>ge01f6b80a9b45a8e207e3d9cdf2b536d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>USG_DUMP</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>gdae2e4f464336f9056f8fae3e0d4f47c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>usage</name>
+      <anchorfile>group__usage.html</anchorfile>
+      <anchor>g41d1c1f994db6ab7f715ca94d73d57a4</anchor>
+      <arglist>(int code, char *str, int modemask)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>parse_mathexp</name>
+    <title>Parse Mathematical Operation Instructions</title>
+    <filename>group__parse__mathexp.html</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_DIV</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>gddec4be73478fb9243f0ea0087366641</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_MUL</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>g4146f7f25d6c4a864b6db8d4e0adf3e1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_NONE</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>gb2ee9d111f415c5df9ef71f3f4544e85</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_ADD</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>g073d010839a6dc707f3031db67149870</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_SUB</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>gbe4a72f7e3f753e7059bc2f2a01a0cfc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_POWE</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>g4799df9f838d38dd3bf31faaff3daf56</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_POWB</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>gb55cf31f8ec36312337505f9138102c7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_ABS</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>g0e01cf08819ea754f8eba0577136ad4f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_AND</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>gc56577e3b08d3c7453db5d81d96bf05b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>OP_OR</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>gda17ceeb97ff33a840db0943f9821c5b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>parse_mathexp</name>
+      <anchorfile>group__parse__mathexp.html</anchorfile>
+      <anchor>geee91269d672bfd6eeaeccf7c80719fb</anchor>
+      <arglist>(int sind, char *expr, COLUMN *C, int *max_column)</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>COLRESULT</name>
+    <filename>structCOLRESULT.html</filename>
+    <member kind="variable">
+      <type>int</type>
+      <name>count</name>
+      <anchorfile>structCOLRESULT.html</anchorfile>
+      <anchor>8376557dd241c120ff63c3387d15dca4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>scount</name>
+      <anchorfile>structCOLRESULT.html</anchorfile>
+      <anchor>84651919684c4e021b2351620e6044c1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>double</type>
+      <name>sum</name>
+      <anchorfile>structCOLRESULT.html</anchorfile>
+      <anchor>49bd74f0a859e1ae00eddb2fcf3b39d0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>double</type>
+      <name>qsum</name>
+      <anchorfile>structCOLRESULT.html</anchorfile>
+      <anchor>f7266f8546641185a2982c0d368c3ab9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>double</type>
+      <name>max</name>
+      <anchorfile>structCOLRESULT.html</anchorfile>
+      <anchor>88878b7c87c5fd66d5d559e80aeaaacc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>double</type>
+      <name>min</name>
+      <anchorfile>structCOLRESULT.html</anchorfile>
+      <anchor>e125cf36c2e9d98b5cfef00aa08c7be1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>limcol</name>
+      <anchorfile>structCOLRESULT.html</anchorfile>
+      <anchor>eb07f387900f3c4995de312b82e40ee3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>double</type>
+      <name>limlow</name>
+      <anchorfile>structCOLRESULT.html</anchorfile>
+      <anchor>2cfc55be64632cb6481e7de7d7b3b113</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>double</type>
+      <name>limupp</name>
+      <anchorfile>structCOLRESULT.html</anchorfile>
+      <anchor>d0347a0a215f55fcf2f561bf0830456b</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>COLUMN</name>
+    <filename>structCOLUMN.html</filename>
+    <member kind="variable">
+      <type>int</type>
+      <name>column</name>
+      <anchorfile>structCOLUMN.html</anchorfile>
+      <anchor>3f50eabdad8096d0415a2f4035d07692</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>char *</type>
+      <name>spoi</name>
+      <anchorfile>structCOLUMN.html</anchorfile>
+      <anchor>9eef8b2f8e5c743d4b98971afb8ab911</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>operation</name>
+      <anchorfile>structCOLUMN.html</anchorfile>
+      <anchor>e22f1d624b4a1cd9432171544c82e9c2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>double</type>
+      <name>value</name>
+      <anchorfile>structCOLUMN.html</anchorfile>
+      <anchor>bb94c26e06cc36a0fb13563eb5385c23</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>valsp</name>
+      <anchorfile>structCOLUMN.html</anchorfile>
+      <anchor>ccb7d5b6ed23a124fe0feb917ffcf9af</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>double</type>
+      <name>faktor</name>
+      <anchorfile>structCOLUMN.html</anchorfile>
+      <anchor>397cafaa2f17b44027e19c98544d1c8d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>double</type>
+      <name>item</name>
+      <anchorfile>structCOLUMN.html</anchorfile>
+      <anchor>7bb93f1583c9883d4d1c58e7312ed0e1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>char *</type>
+      <name>sop</name>
+      <anchorfile>structCOLUMN.html</anchorfile>
+      <anchor>32045d761147f542c04c379eb6f81e59</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+</tagfile>

@@ -1,0 +1,31 @@
+
+colsum 0.6.2
+(c) Stefan Habermehl 1995-2009
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Usage: colsum.exe [[-i] <infile>] [-o <outfile>] [-v#] [-r <ini-file>] [-h] [-t] [-d]
+	[-s<save-ini-file>] [-k] [-f%<format-specification>] [c|C<column>:#1[:#2]]
+	{[<column>] [=[+|-|*|x|/|^|a|&|n|||o][+|-]#.#|S<column>[^]] [+|*]} {...} ...
+
+          option v: verbosity level( 0-10), Default=2
+          option f: output-format (C-style)
+          option h: help (set verbosity to 0 for configuration dump!)
+          option i: infile to read from instead of <stdin>
+          option o: outfile to write to instead of <stdout>
+          option r: configuration file
+          option s: save configuration to given filename or configuration file where configuration
+          	was read from or default file (when without argument)
+          option k: collect comments for saved configuration file (see -s)
+          option t: output current time
+          option d: output current date
+          mathematical expression in the form "(expr)" or "=expr" must follow the
+          	column-no. to apply to, if given
+          + (default) or * after col-no. is operator between column's
+          	result and stack
+          c: computation and output only for lines where the specified
+          	column's value is #1 or between #1 and #2
+          Default column=1, column 0 holds the row no. 1-.. (only significant lines)
+          blank lines and comments(#) will be ignored (unless -s and -k are set)!
+

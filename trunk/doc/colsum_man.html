@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>colsum</title>
+</head>
+<body>
+<h1>colsum</h1>
+<hr/>
+<pre>
+
+
+</pre>
+<h2>SYNOPSIS</h2><pre>
+       Usage: colsum.exe [[-i] &lt;infile&gt;] [-o &lt;outfile&gt;] [-v#] [-r &lt;ini-file&gt;] [-h] [-t] [-d]
+           [-s&lt;save-ini-file&gt;] [-k] [-f%&lt;format-specification&gt;] [c|C&lt;column&gt;:#1[:#2]]
+           {[&lt;column&gt;] [=[+|-|*|x|/|^|a|&amp;|n|||o][+|-]#.#|S&lt;column&gt;[^]] [+|*]} {...} ...
+
+
+
+
+</pre>
+<h2>DESCRIPTION</h2><pre>
+       Colsum extracts columns with numerical values from an
+       input stream, does some computations on them and outputs
+       the results in a well-defined, formatted form to an output
+       stream.
+
+       Colsum is designed to be used as a filter. Input- and
+       output stream can both be a file, pipe or standard I/O
+       channel. You can easily do more complex computations by
+       combining colsum calls with different instructions in a
+       pipeline.
+
+   <strong>Basic</strong> <strong>operations</strong> <strong>and</strong> <strong>options:</strong>
+       1. Compute number of values, sum, maximum, minimum,
+       arithmetic mean and standard deviation based on one result
+       value per non-empty input file row
+
+       2. Return a 'clean' selection of input columns and/or
+       values computed from them
+
+       3. Output format for numerical values is decimal float by
+       default, but can be octal or hexadecimal depending on
+       output option '-v' or specified as 'printf'-Style format
+       string (see 'man 3 printf')
+
+       4. Every input column can be transformed by one
+       mathematical operation:
+
+       <strong>o</strong> add/substract a constant value or value of another
+         column
+
+       <strong>o</strong> multiply/divide by a constant value or value of another
+         column
+
+       <strong>o</strong> raise to power, given exponent
+
+
+
+</pre>
+<h2>OPTIONS</h2><pre>
+       Use command <strong>'colsum</strong> <strong>-h'</strong>:
+
+                 option v: verbosity level( 0-10), Default=2
+                 option f: output-format (C-style)
+                 option h: help (set verbosity to 0 for configuration dump!)
+                 option i: infile to read from instead of &lt;stdin&gt;
+                 blank lines and comments(#) will be ignored (unless -s and -k are set)!
+
+
+
+
+</pre>
+<h2>VERSION</h2><pre>
+       <strong>Version:</strong>
+           0.6.2 ($Id: <strong>colsum.c</strong> 46 2009-02-01 20:12:09Z stefan $)
+
+
+
+</pre>
+<h2>AUTHOR</h2><pre>
+       <strong>Author:</strong>
+           Stefan Habermehl &lt;stefan.habermehl@mcff.de&gt;
+
+
+
+</pre>
+<h2>COPYRIGHT</h2><pre>
+       <strong>Copyright:</strong> .RS 4 (c) 1994,1995,1996,2000,2004,2008,2009
+       Stefan Habermehl
+
+       <strong>License:</strong> .RS 4 GNU General Public License v3 or later, see
+       <strong>CFLIB</strong> <strong>License</strong>
+
+
+
+</pre>
+<h2>SEE ALSO</h2><pre>
+       <strong>Uses:</strong> .RS 4 <strong>Flexible</strong> <strong>Configuration</strong> <strong>Library</strong>
+       &lt;http://cflib.berlios.de&gt;
+
+
+
+
+</pre>
+<h2>Author</h2><pre>
+       Generated automatically by Doxygen for COLSUM - Column
+       Computation Tool from the source code.
+
+
+
+Version 0.6.2               1 Feb 2009                  colsum(1)
+</pre>
+</body>
+</html>
