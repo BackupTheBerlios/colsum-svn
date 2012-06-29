@@ -12,7 +12,7 @@
 #                                          #
 ############################################
 #
-# @version SVN: $Id: makefile 54 2009-02-01 20:55:41Z stefan $
+# @version SVN: $Id$
 #
 ############################################
 
@@ -32,7 +32,8 @@ LFLAGS     := $(LIBS)
 OBJECTS    = colsum.o colmod.o
 
 NROFF      = $(shell which nroff) -man -T$(TERM)
-COLMANPATH = /usr/local/man/man1/
+#COLMANPATH = /usr/local/man/man1/
+COLMANPATH = /usr/share/man/man1/
 COLBINPATH = /usr/local/bin/
 
 ARCHIV     = colsum-0.6.2-L
